@@ -1,0 +1,136 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Transactions {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+      <div class="d-block mb-4 mb-md-0">
+          <!-- <nav aria-label="breadcrumb" class="d-none d-md-inline-block"> -->
+              <!-- <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+                <li class="breadcrumb-item"><a href="#"><span class="fas fa-home"></span></a></li>
+                <li class="breadcrumb-item"><a href="#">Portfolio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Logs</li>
+              </ol> -->
+          </nav>
+          <h2 class="h1">All Logs</h1>
+          <p class="mb-0">Logs from the camera feed.</p>
+      </div>
+      <div class="btn-toolbar mb-2 mb-md-0">
+          <!-- <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-primary">Share</button>
+              <button type="button" class="btn btn-sm btn-outline-primary">Export</button>
+          </div> -->
+      </div>
+  </div>
+  <div class="table-settings mb-4">
+      <div class="row align-items-center justify-content-between">
+          <div class="col col-md-6 col-lg-3 col-xl-4">
+              <div class="input-group">
+                  <span class="input-group-text" id="basic-addon2"><span class="fas fa-search"></span></span>
+                  <input type="text" class="form-control" id="myInput" onkeyup="myFunction()"placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+              </div>
+          </div>
+          <div class="col-4 col-md-2 col-xl-1 ps-md-0 text-right">
+              <div class="btn-group">
+                  <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="icon icon-sm icon-gray pt-1">
+                          <span class="fas fa-cog"></span>
+                      </span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end pb-0">
+                      <span class="small ps-3 fw-bold text-dark">Show</span>
+                      <a class="dropdown-item d-flex fw-bold" href="#">10 <span class="icon icon-small ms-auto"><span class="fas fa-check"></span></span></a>
+                      <a class="dropdown-item fw-bold" href="#">20</a>
+                      <a class="dropdown-item fw-bold" href="#">30</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="card card-body shadow-sm table-wrapper table-responsive">
+      <table id="myTable" class="table table-hover">
+          <thead>
+              <tr>
+                  <th>Location</th>
+                  <th>Name</th>						
+                  <th>Last seen</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <h1></h1>
+          <tbody>
+              <!-- Item -->
+              {% for item in log_global if not item["people"]==[]%}
+              <tr>
+                  <td>
+                      <a href="#" class="fw-bold">
+                          {{item['location']}}
+                      </a>
+                  </td>
+                  <td>
+                      <span class="fw-normal">
+                        {% for ppl in item['people']  if not item['people'].length == 0%}
+
+                        {{ppl}},
+                    </span>
+                        {%endfor%}
+                    </td>
+                    <td><span class="fw-normal">{{item['date']}}</span></td>                        
+                    <td><span class="fw-normal">{{item['time']}}</span></td>
+                    <!-- <td><span class="fw-bold">$799,00</span></td> -->
+                    <td><span class="fw-bold text-success">Tracking</span></td>
+                        <td>        
+                     
+                    </td>
+                </tr>
+                {% endfor %}
+             
+          </tbody>
+      </table>
+      <div class="card-footer px-3 border-0 d-flex align-items-center justify-content-between">
+          <nav aria-label="Page navigation example">
+              <ul class="pagination mb-0">
+                  <!-- <li class="page-item">
+                      <a class="page-link" href="#">Previous</a>
+                  </li> -->
+                  <li class="page-item">
+                      <a class="page-link" href="#">1</a>
+                  </li>
+                 
+                 
+              </ul>
+          </nav>
+          <div class="fw-bold small d-none d-lg-block">Showing <b>all</b> out of <b>all</b> entries</div>
+      </div>
+  </div>
+  <script>
+    function myFunction() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    </script>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
