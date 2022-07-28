@@ -170,3 +170,6 @@ A geofence is a virtual perimeter for a real-world geographic area. It could be 
 #### 6.1.3 Analytics 
 
 This system can execute various analytics that are cumbersome otherwise. These include performing a real time head count, identifying common movement patterns, heat maps, generating statistics w.r.t time and location per head, detailed analysis of traffic flow etc.
+
+
+#### Read more - https://drive.google.com/file/d/1C4E96WvlyfW7bgfvhcdYmDy5zCDk0ly-/view?usp=sharing
