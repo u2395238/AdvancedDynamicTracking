@@ -1,6 +1,6 @@
 <div align="center">
 
-# Vehicle Counting using Yolov5 and Deep Sort
+# Vehicle Counting program; developed from AdvancedDynamictracking
 
 </div>
 
@@ -21,12 +21,12 @@
 
 ## Pre-requisites : 
 
-1) Clone the Repository [vehicle-counting-yolov5](https://github.com/mahimairaja/vehicle-counting-yolov5)
+1) Clone the Repository [AdvancedDynamicTracking](https://github.com/u2395238/AdvancedDynamicTracking)
 
 ```bash
-git clone https://github.com/mahimairaja/vehicle-counting-yolov5.git
+git clone https://github.com/u2395238/AdvancedDynamicTracking.git
 
-cd vehicle-counting-yolov5
+cd AdvancedDynamicTracking
 ```
 
 2) Clone the legacy Yolo-v5 Repository
@@ -34,8 +34,19 @@ cd vehicle-counting-yolov5
 ```bash
 git clone https://github.com/ultralytics/yolov5.git
 ```
-   
-4) Install the libraries
+3) Start python virtual environment
+
+```bash
+python -m venv tracking
+```
+
+4) Activate the virtual environment
+
+```bash
+source tracking/bin/activate
+```
+
+6) Install the libraries
 ```bash
 pip install -r requirements.txt
 ```
@@ -47,7 +58,7 @@ pip install -r requirements.txt
 
 After completing the above steps your directory should look like somewhat as of below structure
 
-- `vehicle-counting-yolov5`
+- `AdvancedDynamicTracking`
    - deep_sort
    - yolov5
    - input.mp4
@@ -62,4 +73,4 @@ python tracker.py
 # This will download model weight - yolov5s.pt to base folder on first execution.
 ```
 
-#### Feel free to [conect with me](https://www.linkedin.com/in/mahimairaja/)...
+#### Feel free to [conect with me](https://www.linkedin.com/in/shalumalik/)...
