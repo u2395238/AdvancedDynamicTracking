@@ -1,6 +1,6 @@
 """
 Author: Shalu
-Social : https://www.linkedin.com/in/mahimairaja/
+Social : https://www.linkedin.com/in/shalumalik/
 This script is used to count the number of vehicles from a camera feed.
 """
 
@@ -250,7 +250,7 @@ def detect(opt, traffic_light_interval, traffic_light_threshold):
                 color=(0,0,255)
                 # print(f"Shape: {im0.shape}")
 
-                # Left Lane Line
+                #Left Lane Line
                 #cv2.line(im0, (0, h-300), (600, h-300), (255,0,0), thickness=3)
 
                 # Right Lane Line
@@ -269,11 +269,11 @@ def detect(opt, traffic_light_interval, traffic_light_threshold):
                 # It is the count of both incoming and outgoing vehicles 
                 
                 #Objects 
-                # cv2.putText(im0, "Cars:  "+str(car_count), (60, 250), font, 
-                #    1.5, (20,255,0), 3, cv2.LINE_AA)                
+                cv2.putText(im0, "Cars:  "+str(car_count), (60, 250), font, 
+                    1.5, (20,255,0), 3, cv2.LINE_AA)                
 
-                # cv2.putText(im0, "Trcuks:  "+str(truck_count), (60, 350), font, 
-                #    1.5, (20,255,0), 3, cv2.LINE_AA)  
+                cv2.putText(im0, "Trcuks:  "+str(truck_count), (60, 350), font, 
+                    1.5, (20,255,0), 3, cv2.LINE_AA)  
                 
                 end_time = time.time()
                 fps = 1 / (end_time - start_time)
@@ -377,7 +377,7 @@ def direction(id,y):
 
 
 if __name__ == '__main__':
-    __author__ = 'Shalu'
+    __author__ = 'Alvin'
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str, default='yolov5s.pt', help='model.pt path(s)')
     parser.add_argument('--deep_sort_model', type=str, default='osnet_x0_25')
